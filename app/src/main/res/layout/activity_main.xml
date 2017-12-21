@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="gtf.nutricion.test.MainActivity"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.kofigyan.stateprogressbar.StateProgressBar
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/spb_menu"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:spb_stateSize="40dp"
+            app:spb_stateTextSize="12sp"
+            app:spb_currentStateNumber="one"
+            app:spb_maxStateNumber="five"
+            app:spb_stateBackgroundColor="@color/grey"
+            app:spb_stateForegroundColor="@color/colorAccent"
+            app:spb_stateNumberBackgroundColor="@color/white"
+            app:spb_stateNumberForegroundColor="@color/white"
+            app:spb_currentStateDescriptionColor="@color/colorAccent"
+            app:spb_stateDescriptionColor="@color/grey"/>
+
+        <ScrollView
+            android:layout_above="@+id/ll_bottons"
+            android:layout_below="@+id/spb_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <FrameLayout
+                android:id="@+id/container"
+                android:layout_below="@+id/spb_menu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/ll_bottons"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:background="#15000000"
+            android:gravity="center_horizontal|center_vertical">
+
+            <Button
+                android:id="@+id/btn_back"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:textSize="14sp"
+                android:background="@color/grey"
+                android:textColor="@color/white"
+                android:text="Atrás"
+                android:enabled="false"
+                android:layout_marginRight="20dp"/>
+
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:background="@color/colorAccent"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:text="Siguiente"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>
