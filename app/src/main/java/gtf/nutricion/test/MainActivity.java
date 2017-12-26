@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.kofigyan.stateprogressbar.StateProgressBar;
 
@@ -30,8 +31,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     ArrayList<Fragment> fragments;
     Fragment currentFragment;
-    int back = 0;
-    int next = 0;
     int current = 0;
     private String TAG = MainActivity.class.getSimpleName();
 
@@ -81,8 +80,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fragmentTransaction.hide(fragmentFour);
         fragmentTransaction.hide(fragmentFive);
 
-        currentFragment = fragmentOne;
-
         fragments = new ArrayList<>();
 
         fragments.add(fragmentOne);
@@ -91,71 +88,87 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fragments.add(fragmentFour);
         fragments.add(fragmentFive);
 
+        currentFragment = fragments.get(0);
+
         getBackYNext();
 
     }
 
     @Override
     public void onClick(View view) {
-        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        Fragment fragment;
         switch (view.getId()){
             case R.id.btn_back:
+                int back = current-1;
                 if(back <= 0){
                     btnBack.setEnabled(false);
                     btnBack.setBackground(getResources().getDrawable(R.color.grey));
                     if (back == 0){
-                        fragmentTransaction.hide(currentFragment);
-                        fragmentTransaction.show(fragments.get(back));
-                        fragmentTransaction.commit();
-                        currentFragment = fragments.get(back);
-
-                        currentStep(back);
+                        showView(back);
                     }
                 }else{
                     btnNext.setEnabled(true);
                     btnNext.setBackground(getResources().getDrawable(R.color.colorAccent));
                     btnBack.setEnabled(true);
                     btnBack.setBackground(getResources().getDrawable(R.color.colorAccent));
-
-                    fragmentTransaction.hide(currentFragment);
-                    fragmentTransaction.show(fragments.get(back));
-                    fragmentTransaction.commit();
-                    currentFragment = fragments.get(back);
-
-                    currentStep(back);
+                    showView(back);
                 }
 
                 break;
             case R.id.btn_next:
-                if(next == 4){
-                    btnNext.setEnabled(false);
-                    btnNext.setBackground(getResources().getDrawable(R.color.grey));
 
-                    fragmentTransaction.hide(currentFragment);
-                    fragmentTransaction.show(fragments.get(next));
-                    fragmentTransaction.commit();
-                    currentFragment = fragments.get(next);
+                Log.d(TAG, "current fragment switch -------------------------------------------> "+ current);
+                int next = current +1;
 
-                    currentStep(next);
-                }else{
+                if(next == 1){
+                    Log.d(TAG, "current fragment -------------------------------------------> "+ next);
+                    btnBack.setEnabled(true);
+                    btnBack.setBackground(getResources().getDrawable(R.color.colorAccent));
+                    btnNext.setEnabled(true);
+                    btnNext.setBackground(getResources().getDrawable(R.color.colorAccent));
+                    if(FragmentOne.verify()){
+                        showView(next);
+                    }else{
+                        Toast.makeText(this, "Por favor complete los datos solicitados", Toast.LENGTH_SHORT).show();
+                    }
+                }else if(next == 2){
+                    Log.d(TAG, "current fragment -------------------------------------------> "+ next);
                     btnBack.setEnabled(true);
                     btnBack.setBackground(getResources().getDrawable(R.color.colorAccent));
                     btnNext.setEnabled(true);
                     btnNext.setBackground(getResources().getDrawable(R.color.colorAccent));
 
-                    fragmentTransaction.hide(currentFragment);
-                    fragmentTransaction.show(fragments.get(next));
-                    fragmentTransaction.commit();
-                    currentFragment = fragments.get(next);
-
-                    currentStep(next);
+                    if(FragmentTwo.verify()){
+                        showView(next);
+                    }else{
+                        Toast.makeText(this, "Por favor complete los datos solicitados", Toast.LENGTH_SHORT).show();
+                    }
+                }else if(next == 3){
+                    Log.d(TAG, "current fragment -------------------------------------------> "+ next);
+                    btnBack.setEnabled(true);
+                    btnBack.setBackground(getResources().getDrawable(R.color.colorAccent));
+                    btnNext.setEnabled(true);
+                    btnNext.setBackground(getResources().getDrawable(R.color.colorAccent));
+                    showView(next);
+                }else if(next == 4){
+                    Log.d(TAG, "current fragment -------------------------------------------> "+ next);
+                    btnNext.setEnabled(false);
+                    btnNext.setBackground(getResources().getDrawable(R.color.grey));
+                    showView(next);
                 }
                 break;
         }
-
         getBackYNext();
+    }
 
+    public void showView(int step){
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        fragmentTransaction.hide(currentFragment);
+        fragmentTransaction.show(fragments.get(step)).detach(fragments.get(1)).attach(fragments.get(1));
+        fragmentTransaction.commit();
+        currentFragment = fragments.get(step);
+        currentStep(step);
     }
 
     public void currentStep(int current){
@@ -184,29 +197,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void getBackYNext(){
         for (int i=0; i<fragments.size(); i++){
             if(currentFragment == fragments.get(i)){
-                if(i == 0){
-                    back = i-1;
-                    next = i+1;
-                }else if(i == 1){
-                    back = i-1;
-                    next = i+1;
-                }else if(i == 2){
-                    back = i-1;
-                    next = i+1;
-                }else if(i == 3){
-                    back = i-1;
-                    next = i+1;
-                }else if(i == 4){
-                    back = i-1;
-                    next = i+1;
-                }
                 current = i;
             }
         }
 
-        Log.d(TAG, "Fragment Back: -----------------------> "+back);
+        Log.d(TAG, "Fragment Back: -----------------------> "+ (current-1));
         Log.d(TAG, "Fragment Current: --------------------> "+current);
-        Log.d(TAG, "Fragnent Next: -----------------------> "+next);
+        Log.d(TAG, "Fragnent Next: -----------------------> "+(current+1));
 
     }
 
