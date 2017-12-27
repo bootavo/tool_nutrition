@@ -21,4 +21,13 @@ public class Constants {
     public static double ALBUMINA = 0.0;
     public static double RECUENTO_TOTAL_LINFOCITARIO = 0.0;
 
+    public static double PT_1 = 0.0;
+    public static double PT_2 = 0.0;
+    public static double PT_3 = 0.0;
+    public static double PT_4 = 0.0;
+    public static double PT_5 = 0.0;
+    public static double PT_6 = 0.0;
+    public static double PT_7 = 0.0;
+
+
 }

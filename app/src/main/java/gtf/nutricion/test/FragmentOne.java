@@ -123,7 +123,6 @@ public class FragmentOne extends Fragment {
     }
 
     public static String getAge(){
-        Constants.AGE = Integer.parseInt(mAge.getText().toString());
         return mAge.getText().toString();
     }
 
@@ -139,6 +138,7 @@ public class FragmentOne extends Fragment {
             return false;
         }
 
+        Constants.AGE = Integer.parseInt(mAge.getText().toString());
         hideInputSoft();
         return true;
     }

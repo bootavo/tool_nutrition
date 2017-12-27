@@ -69,16 +69,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Fragment fragmentFive = new FragmentFive(); //1 IMC
 
         fragmentTransaction.add(R.id.container, fragmentOne);
-        fragmentTransaction.add(R.id.container, fragmentTwo);
-        fragmentTransaction.add(R.id.container, fragmentThree);
-        fragmentTransaction.add(R.id.container, fragmentFour);
-        fragmentTransaction.add(R.id.container, fragmentFive);
+        //fragmentTransaction.add(R.id.container, fragmentTwo);
+        //fragmentTransaction.add(R.id.container, fragmentThree);
+        //fragmentTransaction.add(R.id.container, fragmentFour);
+        //fragmentTransaction.add(R.id.container, fragmentFive);
 
         fragmentTransaction.commit();
-        fragmentTransaction.hide(fragmentTwo);
-        fragmentTransaction.hide(fragmentThree);
-        fragmentTransaction.hide(fragmentFour);
-        fragmentTransaction.hide(fragmentFive);
+        //fragmentTransaction.hide(fragmentTwo);
+        //fragmentTransaction.hide(fragmentThree);
+        //fragmentTransaction.hide(fragmentFour);
+        //fragmentTransaction.hide(fragmentFive);
 
         fragments = new ArrayList<>();
 
@@ -103,14 +103,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     btnBack.setEnabled(false);
                     btnBack.setBackground(getResources().getDrawable(R.color.grey));
                     if (back == 0){
-                        showView(back);
+                        showBackView(back);
                     }
                 }else{
                     btnNext.setEnabled(true);
                     btnNext.setBackground(getResources().getDrawable(R.color.colorAccent));
                     btnBack.setEnabled(true);
                     btnBack.setBackground(getResources().getDrawable(R.color.colorAccent));
-                    showView(back);
+                    showBackView(back);
                 }
 
                 break;
@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     btnNext.setEnabled(true);
                     btnNext.setBackground(getResources().getDrawable(R.color.colorAccent));
                     if(FragmentOne.verify()){
-                        showView(next);
+                        showNextView(next);
                     }else{
                         Toast.makeText(this, "Por favor complete los datos solicitados", Toast.LENGTH_SHORT).show();
                     }
@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     btnNext.setBackground(getResources().getDrawable(R.color.colorAccent));
 
                     if(FragmentTwo.verify()){
-                        showView(next);
+                        showNextView(next);
                     }else{
                         Toast.makeText(this, "Por favor complete los datos solicitados", Toast.LENGTH_SHORT).show();
                     }
@@ -148,26 +148,52 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     btnBack.setBackground(getResources().getDrawable(R.color.colorAccent));
                     btnNext.setEnabled(true);
                     btnNext.setBackground(getResources().getDrawable(R.color.colorAccent));
-                    showView(next);
+                    showNextView(next);
                 }else if(next == 4){
                     Log.d(TAG, "current fragment -------------------------------------------> "+ next);
                     btnNext.setEnabled(false);
                     btnNext.setBackground(getResources().getDrawable(R.color.grey));
-                    showView(next);
+                    showNextView(next);
                 }
                 break;
         }
         getBackYNext();
     }
 
-    public void showView(int step){
+    public void showBackView(int step){
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        Log.d(TAG, "CURRENT FRAGMENT BACK: "+currentFragment);
+        //fragmentTransaction.hide(currentFragment);
+        fragmentTransaction.remove(fragments.get(step+1));
+        fragmentTransaction.show(fragments.get(step));
+        fragmentTransaction.commit();
+        currentFragment = fragments.get(step);
+        currentStep(step);
+    }
+
+    public void showNextView(int step){
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
+        /*
+        if(step == 1){
+            fragment = new FragmentTwo();
+        }else if(step == 2){
+            fragment = new FragmentThree();
+        }else if(step == 3){
+            fragment = new FragmentFour();
+        }else if(step == 4){
+            fragment = new FragmentFive();
+        }
+        */
+
         fragmentTransaction.hide(currentFragment);
-        fragmentTransaction.show(fragments.get(step)).detach(fragments.get(1)).attach(fragments.get(1));
+        fragmentTransaction.add(R.id.container, fragments.get(step));
+        fragmentTransaction.show(fragments.get(step));
         fragmentTransaction.commit();
         currentFragment = fragments.get(step);
+        Log.d(TAG, "CURRENT FRAGMENT NEXT: "+fragments.get(step));
         currentStep(step);
     }
 

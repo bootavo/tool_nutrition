@@ -108,8 +108,6 @@ public class FragmentTwo extends Fragment{
             }
         });
 
-        mIMC.setText("0.00");
-
         Log.d(TAG, "---------------------------> Fin Init");
     }
 
@@ -269,7 +267,9 @@ public class FragmentTwo extends Fragment{
 
             @Override
             public void afterTextChanged(Editable editable) {
-                showResultPostrateSize();
+                if(!mBodyWeightPostrate.getText().toString().equals("0.00")){
+                    showResultPostrateSize();
+                }
             }
         });
 
@@ -341,7 +341,7 @@ public class FragmentTwo extends Fragment{
 
         String imcFormat = String.format("%.2f", imc);
         Constants.IMC = Double.parseDouble(imcFormat);
-
+        getScoreStepOne(Constants.IMC);
         Log.d("IMC: ", ""+Constants.IMC);
 
         AnimateCounter animateCounter = new AnimateCounter.Builder(mIMC)
@@ -351,6 +351,18 @@ public class FragmentTwo extends Fragment{
                 .build();
 
         animateCounter.execute();
+    }
+
+    public void getScoreStepOne(double value){
+        if(value >= 18.6 && value <= 21.0){
+            Constants.PT_1 = 1;
+        }else if (value >= 21.1 && value <= 23.0){
+            Constants.PT_1 = 2;
+        }else if (value >= 23.1 && value <= 24.9){
+            Constants.PT_1 = 3;
+        }else{
+            Constants.PT_1 = 0;
+        }
     }
 
     public void showResultPostrateBodyWeight(){
@@ -436,7 +448,7 @@ public class FragmentTwo extends Fragment{
         showIMCPostrate();
     }
 
-    static void showIMCPostrate(){
+    public void showIMCPostrate(){
         Log.d(TAG, "---------------------------> showIMCPostrate");
         float body_weight = Float.parseFloat(Constants.BODY_WEIGHT+"");
         float size = Float.parseFloat(Constants.SIZE+"");
@@ -444,10 +456,10 @@ public class FragmentTwo extends Fragment{
 
         String imcFormat = String.format("%.2f", imc);
         Constants.IMC = Double.parseDouble(imcFormat);
-
+        getScoreStepOne(Constants.IMC);
         Log.d("IMC: ", ""+Constants.IMC);
 
-        AnimateCounter animateCounter = new AnimateCounter.Builder(mIMC)
+        AnimateCounter animateCounter = new AnimateCounter.Builder(mIMCPpostrate)
                 .setCount(0f, imc, 2)
                 .setDuration(2000)
                 .setInterpolator(new DecelerateInterpolator())
@@ -456,7 +468,7 @@ public class FragmentTwo extends Fragment{
         animateCounter.execute();
     }
 
-    static float getEB(){
+    public float getEB(){
         if(mEB.getText().toString().trim() != null && !mEB.getText().toString().trim().equals("")){
             return Float.parseFloat(mEB.getText().toString());
         }else{
@@ -464,7 +476,7 @@ public class FragmentTwo extends Fragment{
         }
     }
 
-    static float getPA(){
+    public float getPA(){
         if(mPA.getText().toString().trim() != null && !mPA.getText().toString().trim().equals("")){
             return Float.parseFloat(mPA.getText().toString());
         }else{
@@ -472,7 +484,7 @@ public class FragmentTwo extends Fragment{
         }
     }
 
-    static float getPAB(){
+    public float getPAB(){
         if(mPAB.getText().toString().trim() != null && !mPAB.getText().toString().trim().equals("")){
             return Float.parseFloat(mPAB.getText().toString());
         }else{
@@ -480,7 +492,7 @@ public class FragmentTwo extends Fragment{
         }
     }
 
-    static float getPB(){
+    public float getPB(){
         if(mPB.getText().toString().trim() != null && !mPB.getText().toString().trim().equals("")){
             return Float.parseFloat(mPB.getText().toString());
         }else{
@@ -488,7 +500,7 @@ public class FragmentTwo extends Fragment{
         }
     }
 
-    static float getPMC(){
+    public float getPMC(){
         if(mPMC.getText().toString().trim() != null && !mPMC.getText().toString().trim().equals("")){
             return Float.parseFloat(mPMC.getText().toString());
         }else{
@@ -496,7 +508,7 @@ public class FragmentTwo extends Fragment{
         }
     }
 
-    static float getPMD(){
+    public float getPMD(){
         if(mPMD.getText().toString().trim() != null && !mPMD.getText().toString().trim().equals("")){
             return Float.parseFloat(mPMD.getText().toString());
         }else{
@@ -504,7 +516,7 @@ public class FragmentTwo extends Fragment{
         }
     }
 
-    static float getPP(){
+    public float getPP(){
         if(mPP.getText().toString().trim() != null && !mPP.getText().toString().trim().equals("")){
             return Float.parseFloat(mPP.getText().toString());
         }else{
@@ -512,7 +524,7 @@ public class FragmentTwo extends Fragment{
         }
     }
 
-    static float getAR(){
+    public float getAR(){
         if(mAR.getText().toString().trim() != null && !mAR.getText().toString().trim().equals("")){
             return Float.parseFloat(mAR.getText().toString());
         }else{
@@ -520,7 +532,7 @@ public class FragmentTwo extends Fragment{
         }
     }
 
-    static void hideInputSoft() {
+    public void hideInputSoft() {
 
         final InputMethodManager inputMethodManager = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
         if (inputMethodManager.isActive()) {
@@ -530,7 +542,7 @@ public class FragmentTwo extends Fragment{
         }
     }
 
-    static float getBodyWeight(){
+    public float getBodyWeight(){
         if(mBodyWeight.getText().toString().trim() == null || mBodyWeight.getText().toString().trim().equals("")){
             return 0.0f;
         }else{
@@ -538,7 +550,7 @@ public class FragmentTwo extends Fragment{
         }
     }
 
-    static float getSize(){
+    public float getSize(){
         if(mSize.getText().toString().trim() != null && !mSize.getText().toString().trim().equals("")){
             return Float.parseFloat(mSize.getText().toString());
         }else{
