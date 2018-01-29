@@ -1,8 +1,7 @@
-package gtf.nutricion.test;
+package gtf.nutricion.test.other;
 
 import android.app.Activity;
 import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,17 +12,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.view.animation.Animation;
 import android.view.animation.DecelerateInterpolator;
-import android.view.animation.LinearInterpolator;
-import android.view.animation.ScaleAnimation;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import java.text.DecimalFormat;
+import gtf.nutricion.test.R;
 
 /**
  * Created by bootavo on 21/12/2017.
@@ -267,9 +262,9 @@ public class FragmentTwo extends Fragment{
 
             @Override
             public void afterTextChanged(Editable editable) {
-                if(!mBodyWeightPostrate.getText().toString().equals("0.00")){
+                //if(!mBodyWeightPostrate.getText().toString().equals("0.00")){
                     showResultPostrateSize();
-                }
+                //}
             }
         });
 
@@ -393,6 +388,7 @@ public class FragmentTwo extends Fragment{
                     .setInterpolator(new DecelerateInterpolator())
                     .build();
             animateCounterBodyWeight.execute();
+
         }else if(Constants.GENDER.equals("F")){
 
             float body_weight = (0.26548f * eb) + (0.65723f * pab) + (0.45102f * pmd) + (0.62714f * pp) + (0.35192f * pa) + (0.04222f * Constants.AGE) - (68.0767f + 2.48f);

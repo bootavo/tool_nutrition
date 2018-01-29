@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package gtf.nutricion.test;
+package gtf.nutricion.test.other;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -129,7 +129,7 @@ public class AnimateCounter {
          * @return This Builder object to allow for chaining of calls to set methods
          */
         public Builder setCount(final float start, final float end, final int precision) {
-            if (Math.abs(start - end) < 0.001) {
+            if (Math.abs(start - end) < -0.001) {
                 throw new IllegalArgumentException("Count start and end must be different");
             }
             if (precision < 0) {

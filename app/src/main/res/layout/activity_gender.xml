@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/toolbar_height">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/tv_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Salir"
+                        android:textSize="@dimen/content"
+                        android:textColor="@color/secondary_text"
+                        android:textStyle="normal"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:layout_alignParentLeft="true"/>
+
+                    <TextView
+                        android:id="@+id/tv_title_activity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Paso 1 de 8"
+                        android:textSize="@dimen/subtitle"
+                        android:textColor="@color/primary_text"
+                        android:textStyle="normal"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center_horizontal|center_vertical"/>
+
+                    <TextView
+                        android:id="@+id/tv_next"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Siguiente"
+                        android:textColor="@color/secondary_text"
+                        android:textSize="@dimen/content"
+                        android:textStyle="normal"
+                        android:layout_marginRight="16dp"
+                        android:layout_alignParentRight="true"
+                        android:visibility="invisible"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:gravity="center_vertical"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <FrameLayout android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <View android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="@drawable/toolbar_dropshadow"/>
+
+                <View
+                    android:id="@+id/v_tab"
+                    android:layout_width="80dp"
+                    android:layout_height="3dp"
+                    android:background="@drawable/toolbar_dropshadow_tab"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Género del paciente"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:textSize="@dimen/title"
+                        android:textStyle="normal"
+                        android:textColor="@color/primary_text"
+                        android:layout_marginTop="10dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal">
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/cv_male"
+                            android:layout_width="130dp"
+                            android:layout_height="130dp"
+                            app:cardElevation="3dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            card_view:cardBackgroundColor="#FBFCFC"
+                            card_view:cardCornerRadius="3dp"
+                            android:layout_margin="10dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:padding="10dp">
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    android:src="@drawable/ic_patient_male"
+                                    android:layout_gravity="center_horizontal"/>
+
+                                <TextView
+                                    android:layout_marginTop="10dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Hombre"
+                                    android:textStyle="normal"
+                                    android:textSize="@dimen/content"
+                                    android:textColor="@color/secondary_text"
+                                    android:gravity="center_horizontal"/>
+
+                            </LinearLayout>
+
+                        </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/cv_female"
+                            android:layout_width="130dp"
+                            android:layout_height="130dp"
+                            app:cardElevation="3dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            card_view:cardBackgroundColor="#FBFCFC"
+                            card_view:cardCornerRadius="3dp"
+                            android:layout_margin="10dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:padding="10dp">
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    android:src="@drawable/ic_patient_female"
+                                    android:layout_gravity="center_horizontal"/>
+
+                                <TextView
+                                    android:layout_marginTop="10dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Mujer"
+                                    android:textStyle="normal"
+                                    android:textSize="@dimen/content"
+                                    android:textColor="@color/secondary_text"
+                                    android:gravity="center_horizontal"/>
+
+                            </LinearLayout>
+
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,4 +1,4 @@
-package gtf.nutricion.test;
+package gtf.nutricion.test.other;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -21,6 +21,7 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import gtf.nutricion.test.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 

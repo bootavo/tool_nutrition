@@ -11,7 +11,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@color/text">
+            android:background="@color/grey">
 
             <TextView
                 android:layout_width="match_parent"
@@ -61,7 +61,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@color/text">
+            android:background="@color/grey">
 
             <TextView
                 android:layout_width="match_parent"
@@ -108,7 +108,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@color/text">
+            android:background="@color/grey">
 
             <TextView
                 android:layout_width="match_parent"

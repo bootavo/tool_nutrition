@@ -15,12 +15,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="@color/text">
+                android:background="@color/grey">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -99,7 +99,7 @@
                         android:text="0.00"
                         android:padding="30dp"
                         android:textSize="48sp"
-                        android:textColor="@color/text"
+                        android:textColor="@color/grey"
                         android:gravity="center_horizontal|center_vertical"
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
@@ -125,12 +125,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="@color/text">
+                android:background="@color/grey">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -348,14 +348,14 @@
                     android:layout_height="wrap_content"
                     android:text="PESO (Kg):"
                     android:textStyle="bold"
-                    android:textColor="@color/text"
+                    android:textColor="@color/grey"
                     android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/tv_body_weight"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:textColor="@color/text"
+                    android:textColor="@color/grey"
                     android:text="0.00"
                     android:textStyle="bold"
                     android:layout_gravity=""
@@ -418,14 +418,14 @@
                     android:layout_height="wrap_content"
                     android:text="TALLA (m):"
                     android:textStyle="bold"
-                    android:textColor="@color/text"
+                    android:textColor="@color/grey"
                     android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/tv_size"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:textColor="@color/text"
+                    android:textColor="@color/grey"
                     android:text="0.00"
                     android:textStyle="bold"
                     android:layout_gravity=""
@@ -460,7 +460,7 @@
                         android:text="0.00"
                         android:padding="30dp"
                         android:textSize="48sp"
-                        android:textColor="@color/text"
+                        android:textColor="@color/grey"
                         android:gravity="center_horizontal|center_vertical"
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"

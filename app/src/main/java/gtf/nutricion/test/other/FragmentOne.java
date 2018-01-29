@@ -1,4 +1,4 @@
-package gtf.nutricion.test;
+package gtf.nutricion.test.other;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -10,13 +10,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
 import butterknife.ButterKnife;
+import gtf.nutricion.test.R;
 
 /**
  * Created by bootavo on 21/12/2017.

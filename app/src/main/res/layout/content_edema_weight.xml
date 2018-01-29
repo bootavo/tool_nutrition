@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_difficult_postrate"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/primary_text">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:text="1. ÍNDICE DE MASA CORPORAL"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/grey">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:text="1.1 PESO"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Padece edema"
+                android:textSize="@dimen/subtitle"
+                android:textStyle="bold"
+                android:textColor="@color/primary_text"/>
+
+            <Switch
+                android:id="@+id/sw_e"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/SCBSwitch"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rl_el"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Edema leve"
+                android:textSize="@dimen/subtitle"
+                android:textStyle="normal"
+                android:textColor="@color/primary_text"/>
+
+            <Switch
+                android:id="@+id/sw_el"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/SCBSwitch"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rl_em"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Edema moderado"
+                android:textSize="@dimen/subtitle"
+                android:textStyle="normal"
+                android:textColor="@color/primary_text"/>
+
+            <Switch
+                android:id="@+id/sw_em"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/SCBSwitch"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rl_es"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Edema severo"
+                android:textSize="@dimen/subtitle"
+                android:textStyle="normal"
+                android:textColor="@color/primary_text"/>
+
+            <Switch
+                android:id="@+id/sw_es"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/SCBSwitch"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Padece ascitis"
+                android:textSize="@dimen/subtitle"
+                android:textStyle="bold"
+                android:textColor="@color/primary_text"/>
+
+            <Switch
+                android:id="@+id/sw_a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/SCBSwitch"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rl_al"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Ascitis leve"
+                android:textSize="@dimen/subtitle"
+                android:textStyle="normal"
+                android:textColor="@color/primary_text"/>
+
+            <Switch
+                android:id="@+id/sw_al"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/SCBSwitch"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rl_am"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Edema moderado"
+                android:textSize="@dimen/subtitle"
+                android:textStyle="normal"
+                android:textColor="@color/primary_text"/>
+
+            <Switch
+                android:id="@+id/sw_am"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/SCBSwitch"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rl_as"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Edema severo"
+                android:textSize="@dimen/subtitle"
+                android:textStyle="normal"
+                android:textColor="@color/primary_text"/>
+
+            <Switch
+                android:id="@+id/sw_as"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/SCBSwitch"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Peso actual:"
+                android:textSize="@dimen/subtitle"
+                android:textColor="@color/primary_text"/>
+
+            <EditText
+                android:id="@+id/et_current_weight"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:hint="0.00"
+                android:layout_gravity=""
+                android:textSize="@dimen/title"
+                android:digits="0123456789."
+                android:inputType="phone"
+                android:gravity="center_horizontal"
+                android:textColor="@color/primary_text"/>
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Kg"
+                android:textSize="@dimen/title"
+                android:textColor="@color/primary_text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Peso re-ajustado:"
+                android:textSize="@dimen/subtitle"
+                android:textColor="@color/primary_text"/>
+
+            <EditText
+                android:id="@+id/et_weight"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:hint="0.00"
+                android:layout_gravity=""
+                android:textSize="@dimen/title"
+                android:gravity="center_horizontal"
+                android:textColor="@color/primary_text"
+                android:focusable="false"
+                android:enabled="false"
+                android:cursorVisible="false"
+                android:digits="0123456789."
+                android:inputType="phone"/>
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Kg"
+                android:textSize="@dimen/title"
+                android:textColor="@color/primary_text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/grey">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:text="1.2 TALLA"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Peso actual:"
+                android:textSize="@dimen/subtitle"
+                android:textColor="@color/primary_text"/>
+
+            <EditText
+                android:id="@+id/et_size"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:hint="0.00"
+                android:layout_gravity=""
+                android:textSize="@dimen/title"
+                android:gravity="center_horizontal"
+                android:textColor="@color/primary_text"
+                android:digits="0123456789."
+                android:inputType="phone"/>
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="m"
+                android:textSize="@dimen/title"
+                android:textColor="@color/primary_text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="50dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_centerHorizontal="true"
+                    app:civ_border_color="@color/colorPrimary"
+                    app:civ_border_width="5dp"
+                    app:civ_border_overlay="true"
+                    android:src="#00000000"/>
+
+                <TextView
+                    android:id="@+id/tv_imc"
+                    android:text="0.00"
+                    android:padding="30dp"
+                    android:textSize="48sp"
+                    android:textColor="@color/grey"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_below="@+id/tv_imc"
+                    android:text="% IMC"
+                    android:textSize="24sp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

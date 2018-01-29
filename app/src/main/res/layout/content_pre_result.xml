@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/primary_text">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="16dp"
+            android:textColor="@color/white"
+            android:text="RESULTADOS DE EVALUACIÓN"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/final_results"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="1. Indice de Masa Corporal"
+                android:textSize="@dimen/content"
+                android:textColor="@color/primary_text"/>
+
+            <TextView
+                android:id="@+id/tv_imc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2pts"
+                android:textSize="@dimen/title"
+                android:textColor="@color/primary_text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/final_results"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="2. Pliegue Cutaneo"
+                android:textSize="@dimen/content"
+                android:textColor="@color/primary_text"/>
+
+            <TextView
+                android:id="@+id/tv_pc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1pt"
+                android:textSize="@dimen/title"
+                android:textColor="@color/primary_text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/final_results"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="3. Circunferencia Muscular del Brazo"
+                android:textSize="@dimen/content"
+                android:textColor="@color/primary_text"/>
+
+            <TextView
+                android:id="@+id/tv_cmb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2pts"
+                android:textSize="@dimen/title"
+                android:textColor="@color/primary_text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/final_results"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="4. Perimetro Abdominal"
+                android:textSize="@dimen/content"
+                android:textColor="@color/primary_text"/>
+
+            <TextView
+                android:id="@+id/tv_pa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1pt"
+                android:textSize="@dimen/title"
+                android:textColor="@color/primary_text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/final_results"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="5. Hemoglobina"
+                android:textSize="@dimen/content"
+                android:textColor="@color/primary_text"/>
+
+            <TextView
+                android:id="@+id/tv_h"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2pts"
+                android:textSize="@dimen/title"
+                android:textColor="@color/primary_text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/final_results"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="6. Albumina"
+                android:textSize="@dimen/content"
+                android:textColor="@color/primary_text"/>
+
+            <TextView
+                android:id="@+id/tv_a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1pt"
+                android:textSize="@dimen/title"
+                android:textColor="@color/primary_text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/final_results"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="7. Recuento Total Linfocitario"
+                android:textSize="@dimen/content"
+                android:textColor="@color/primary_text"/>
+
+            <TextView
+                android:id="@+id/tv_l"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2pts"
+                android:textSize="@dimen/title"
+                android:textColor="@color/primary_text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/final_results"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="Total"
+                android:gravity="right"
+                android:paddingRight="20dp"
+                android:textSize="@dimen/title"
+                android:textColor="@color/primary_text"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tv_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="11pts"
+                android:textSize="@dimen/title"
+                android:textColor="@color/primary_text"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
