@@ -130,7 +130,7 @@ public class Age extends BaseActivity implements View.OnClickListener {
             return false;
         }
 
-        if(Integer.parseInt(getAge()) < 13 || Integer.parseInt(getAge()) > 120){
+        if(Integer.parseInt(getAge()) < 18 || Integer.parseInt(getAge()) > 130){
             return false;
         }
         return true;

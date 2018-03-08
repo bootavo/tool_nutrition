@@ -233,8 +233,10 @@ public class PostrateStep1 extends BaseActivity implements TextWatcher, View.OnC
             if(Constants.AGE >= 18 && Constants.AGE <= 59){
                 if(Constants.GENDER.equals("M")){
                     size = (70.25f) + (0.05f * Constants.AGE) + (1.86f * _ar);
+                    size = size /100f;
                 }else if (Constants.GENDER.equals("F")){
                     size = (1.885f * _ar) + (71.85f);
+                    size = size /100f;
                 }
             }else if(Constants.AGE >= 60){
                 if(Constants.GENDER.equals("M")){
@@ -244,7 +246,7 @@ public class PostrateStep1 extends BaseActivity implements TextWatcher, View.OnC
                 }
             }
 
-            String sizeFormat = String.format("%.2f", _ar);
+            String sizeFormat = String.format("%.2f", size);
             final_size = Double.parseDouble(sizeFormat);
 
             AnimateCounter animateCounterBodyWeight = new AnimateCounter.Builder(mSize)
@@ -260,13 +262,14 @@ public class PostrateStep1 extends BaseActivity implements TextWatcher, View.OnC
         if(verifyWeight() && verifySize()) {
 
             float body_weight = Float.parseFloat(final_weight+"");
-            float size = Float.parseFloat(final_size+"");
+            float size = Float.parseFloat(final_size+"")/100;
             float imc = body_weight / (size * size);
 
             Log.d(TAG, "------------------>weight: "+body_weight);
             Log.d(TAG, "------------------>size: "+size);
             Log.d(TAG, "------------------>age: "+Constants.AGE);
             Log.d(TAG, "------------------>gender: "+Constants.GENDER);
+            Log.d(TAG, "------------------>IMC: "+imc);
 
             String imcFormat = String.format("%.2f", imc);
 
@@ -283,18 +286,16 @@ public class PostrateStep1 extends BaseActivity implements TextWatcher, View.OnC
             animateCounter.execute();
             mTVNext.setVisibility(View.VISIBLE);
 
-            if(mEb.getText().toString().equals("") || mPa.getText().toString().equals("") || mPab.getText().toString().equals("")
-                    || mPb.getText().toString().equals("") || mPmc.getText().toString().equals("") || mPmd.getText().toString().equals("")
-                    || mPp.getText().toString().equals("")){
-                mWeight.setText("0.00");
-                mImc.setText("0.00");
-                mTVNext.setVisibility(View.GONE);
-            }else if(mAr.getText().toString().equals("")){
-                mSize.setText("0.00");
-                mImc.setText("0.00");
-                mTVNext.setVisibility(View.GONE);
-            }
-
+        }else if(mEb.getText().toString().equals("") || mPa.getText().toString().equals("") || mPab.getText().toString().equals("")
+                || mPb.getText().toString().equals("") || mPmc.getText().toString().equals("") || mPmd.getText().toString().equals("")
+                || mPp.getText().toString().equals("")){
+            mWeight.setText("0.00");
+            mImc.setText("0.00");
+            mTVNext.setVisibility(View.GONE);
+        }else if(mAr.getText().toString().equals("")){
+            mSize.setText("0.00");
+            mImc.setText("0.00");
+            mTVNext.setVisibility(View.GONE);
         }
     }
 

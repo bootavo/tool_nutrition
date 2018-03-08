@@ -60,7 +60,7 @@
                     <TextView
                         android:layout_width="30dp"
                         android:layout_height="wrap_content"
-                        android:text="Kg"
+                        android:text="@string/kg"
                         android:textSize="24sp"
                         android:layout_marginLeft="20dp"/>
 
@@ -164,7 +164,7 @@
 
                 <TextView
                     android:layout_below="@+id/tv_imc"
-                    android:text="% IMC"
+                    android:text="IMC"
                     android:textSize="24sp"
                     android:gravity="center_horizontal|center_vertical"
                     android:layout_width="match_parent"

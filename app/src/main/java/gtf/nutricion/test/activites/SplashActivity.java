@@ -45,8 +45,6 @@ public class SplashActivity extends AppCompatActivity {
         mTitle.startAnimation(fadeIn);
         */
 
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
@@ -60,8 +58,6 @@ public class SplashActivity extends AppCompatActivity {
         anim.setFillAfter(true);
         anim.setDuration(1000);
         mTitle.setAnimation(anim);
-
-
 
         /*
         mConstraintLayout.setOnClickListener(new View.OnClickListener() {
@@ -81,5 +77,19 @@ public class SplashActivity extends AppCompatActivity {
             }
         }, 3500);
 
+        hideStatusBar();
+
     }
+
+    public void hideStatusBar(){
+        View view = getWindow().getDecorView();
+        view.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // hide nav bar
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE);
+    }
+
 }

@@ -185,7 +185,7 @@
             <TextView
                 android:layout_width="230dp"
                 android:layout_height="wrap_content"
-                android:text="Perímetro musclo distal (PMD):"
+                android:text="Perímetro muslo distal (PMD):"
                 android:textSize="16sp"/>
 
             <EditText
@@ -237,7 +237,7 @@
             <TextView
                 android:layout_width="230dp"
                 android:layout_height="wrap_content"
-                android:text="PESO (Kg):"
+                android:text="PESO (kg):"
                 android:textStyle="bold"
                 android:textColor="@color/grey"
                 android:textSize="16sp"/>
@@ -360,7 +360,7 @@
 
                 <TextView
                     android:layout_below="@+id/tv_imc"
-                    android:text="% IMC"
+                    android:text="IMC"
                     android:textSize="24sp"
                     android:gravity="center_horizontal|center_vertical"
                     android:layout_width="match_parent"

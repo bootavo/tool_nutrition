@@ -347,7 +347,7 @@ public class EdemaStep1 extends BaseActivity implements TextWatcher, View.OnClic
             @Override
             public void onClick(View v) {
                 if(mSwitchAscitisS.isChecked()){
-                    resta_ascitis = 10.0;
+                    resta_ascitis = 14.0;
                     mSwitchAscitisL.setChecked(false);
                     mSwitchAscitisM.setChecked(false);
                     setWeight();

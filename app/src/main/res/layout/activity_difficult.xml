@@ -91,7 +91,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Dificultad paciente"
+                        android:text="Dificultad del paciente"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center_horizontal"
                         android:textSize="@dimen/title"
@@ -130,19 +130,22 @@
                                     android:id="@+id/rb_dificult_up"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Dificultades al pararse (Ayuda mínima)"/>
+                                    android:text="Camina o se para con ayuda mínima"
+                                    android:textSize="@dimen/subtitle"/>
 
                                 <RadioButton
                                     android:id="@+id/rb_postrate"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Postrado en cama (Inmobilidad) "/>
+                                    android:text="Postrado en cama o inmovilizado"
+                                    android:textSize="@dimen/subtitle"/>
 
                                 <RadioButton
                                     android:id="@+id/rb_edema"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Edema"/>
+                                    android:text="Edema y/o Ascitis"
+                                    android:textSize="@dimen/subtitle"/>
 
                             </RadioGroup>
 

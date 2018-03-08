@@ -56,7 +56,7 @@
             android:layout_height="match_parent"
             android:textSize="16dp"
             android:textColor="@color/white"
-            android:text="3. CIRCUNFERENCIA MUSCULAR EN BRAZO"
+            android:text="3. CIRCUNFERENCIA MUSCULAR DE BRAZO"
             android:textStyle="bold"
             android:gravity="center_vertical"
             android:paddingLeft="20dp"/>
@@ -73,7 +73,7 @@
             android:id="@+id/et_cb"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:hint="circunferencia en brazo"
+            android:hint="circunferencia de brazo"
             android:inputType="numberDecimal"
             android:digits="0123456789."/>
 

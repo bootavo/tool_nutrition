@@ -130,22 +130,22 @@ public class Step3 extends BaseActivity implements TextWatcher, View.OnClickList
 
         if(Constants.GENDER.equals("M")){
             //HEMOGLOBINE
-            if(Double.parseDouble(hemogobline) >= 10.0 && Double.parseDouble(hemogobline) <= 11.9){
+            if(Double.parseDouble(hemogobline) >= 10.0 && Double.parseDouble(hemogobline) <= 11.99){
                 Constants.PT_5 = 1;
-            }else if(Double.parseDouble(hemogobline) >= 12.0 && Double.parseDouble(hemogobline) <= 13.4){
+            }else if(Double.parseDouble(hemogobline) >= 12.0 && Double.parseDouble(hemogobline) <= 13.49){
                 Constants.PT_5 = 2;
-            }else if(Double.parseDouble(hemogobline) >= 13.5 && Double.parseDouble(hemogobline) <= 18.0){
+            }else if(Double.parseDouble(hemogobline) >= 13.50){
                 Constants.PT_5 = 3;
             }else{
                 Constants.PT_5 = 0;
             }
         }else if(Constants.GENDER.equals("F")) {
             //HEMOGLOBINE
-            if(Double.parseDouble(hemogobline) >= 8.0 && Double.parseDouble(hemogobline) <= 9.9){
+            if(Double.parseDouble(hemogobline) >= 8.0 && Double.parseDouble(hemogobline) <= 9.99){
                 Constants.PT_5 = 1;
-            }else if(Double.parseDouble(hemogobline) >= 10.0 && Double.parseDouble(hemogobline) <= 11.9){
+            }else if(Double.parseDouble(hemogobline) >= 10.0 && Double.parseDouble(hemogobline) <= 11.99){
                 Constants.PT_5 = 2;
-            }else if(Double.parseDouble(hemogobline) >= 12.0 && Double.parseDouble(hemogobline) <= 16.0){
+            }else if(Double.parseDouble(hemogobline) >= 12.0){
                 Constants.PT_5 = 3;
             }else{
                 Constants.PT_5 = 0;
@@ -153,24 +153,24 @@ public class Step3 extends BaseActivity implements TextWatcher, View.OnClickList
         }
 
         //ALBUMINA
-        if(Double.parseDouble(albumina) >= 2.1 && Double.parseDouble(albumina) <= 2.7) {
+        if(Double.parseDouble(albumina) >= 2.10 && Double.parseDouble(albumina) <= 2.79) {
             Constants.PT_6 = 1;
-        }else if(Double.parseDouble(albumina) >= 2.8 && Double.parseDouble(albumina) <= 3.5){
+        }else if(Double.parseDouble(albumina) >= 2.80 && Double.parseDouble(albumina) <= 3.59){
             Constants.PT_6 = 2;
-        }else if(Double.parseDouble(albumina) >= 3.6 && Double.parseDouble(albumina) <= 5.0){
+        }else if(Double.parseDouble(albumina) >= 3.60){
             Constants.PT_6 = 3;
         }else{
             Constants.PT_6 = 0;
         }
 
         //LINFACITARY
-        if(Double.parseDouble(linfacitary) >= 1 && Double.parseDouble(linfacitary) <= 1199) {
+        if(Double.parseDouble(linfacitary) >= 1.0 && Double.parseDouble(linfacitary) <= 1199.99) {
             Constants.PT_7 = 0;
-        }else if(Double.parseDouble(linfacitary) >= 1200 && Double.parseDouble(linfacitary) <= 1499){
+        }else if(Double.parseDouble(linfacitary) >= 1200.00 && Double.parseDouble(linfacitary) <= 1499.99){
             Constants.PT_7 = 1;
-        }else if(Double.parseDouble(linfacitary) >= 1500 && Double.parseDouble(linfacitary) <= 1999){
+        }else if(Double.parseDouble(linfacitary) >= 1500.0 && Double.parseDouble(linfacitary) <= 1999.99){
             Constants.PT_7 = 2;
-        }else{
+        }else if(Double.parseDouble(linfacitary) >= 2000.0){
             Constants.PT_7 = 3;
         }
     }

@@ -39,7 +39,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="(mg/dl)"
+            android:text="(mg/dL)"
             android:gravity="center_vertical"
             android:layout_gravity="right"
             />
@@ -97,7 +97,7 @@
             android:layout_height="match_parent"
             android:textSize="16dp"
             android:textColor="@color/white"
-            android:text="7. RECUENTO LINFACITARIO"
+            android:text="7. RECUENTO TOTAL LINFOCITARIO"
             android:textStyle="bold"
             android:gravity="center_vertical"
             android:paddingLeft="20dp"/>
@@ -121,7 +121,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="(mm cúbicos)"
+            android:text="(cel/mm3)"
             android:gravity="center_vertical"
             android:layout_gravity="right"
             />

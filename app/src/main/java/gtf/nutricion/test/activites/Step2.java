@@ -130,33 +130,33 @@ public class Step2 extends BaseActivity implements TextWatcher, View.OnClickList
 
         if(Constants.GENDER.equals("M")){
             //PCT
-            if(Double.parseDouble(pct) >= 8.0 && Double.parseDouble(pct) <= 9.0){
+            if(Double.parseDouble(pct) >= 8.0 && Double.parseDouble(pct) <= 9.99){
                 Constants.PT_2 = 1;
-            }else if(Double.parseDouble(pct) >= 10.0 && Double.parseDouble(pct) <= 11.0){
+            }else if(Double.parseDouble(pct) >= 10.0 && Double.parseDouble(pct) <= 11.99){
                 Constants.PT_2 = 2;
-            }else if(Double.parseDouble(pct) >= 12.0 && Double.parseDouble(pct) <= 20.0){
+            }else if(Double.parseDouble(pct) >= 12.0 && Double.parseDouble(pct) <= 19.99){
                 Constants.PT_2 = 3;
             }else{
                 Constants.PT_2 = 0;
             }
 
             //CB
-            if(Double.parseDouble(cb) >= 19.0 && Double.parseDouble(cb) <= 23.0) {
+            if(Double.parseDouble(cb) >= 19.0 && Double.parseDouble(cb) <= 23.99) {
                 Constants.PT_3 = 1;
-            }else if(Double.parseDouble(cb) >= 24.0 && Double.parseDouble(cb) <= 26.0){
+            }else if(Double.parseDouble(cb) >= 24.0 && Double.parseDouble(cb) <= 25.99){
                 Constants.PT_3 = 2;
-            }else if(Double.parseDouble(cb) >= 27.0 && Double.parseDouble(cb) <= 30.0){
+            }else if(Double.parseDouble(cb) >= 26.0){
                 Constants.PT_3 = 3;
             }else{
                 Constants.PT_3 = 0;
             }
 
             //PA
-            if(Double.parseDouble(pa) >= 1.0 && Double.parseDouble(pa) <= 90.0) {
+            if(Double.parseDouble(pa) >= 1.0 && Double.parseDouble(pa) <= 90.99) {
                 Constants.PT_4 = 3;
-            }else if(Double.parseDouble(pa) >= 91.0 && Double.parseDouble(pa) <= 93.0){
+            }else if(Double.parseDouble(pa) >= 91.0 && Double.parseDouble(pa) <= 93.99){
                 Constants.PT_4 = 2;
-            }else if(Double.parseDouble(pa) >= 94.0 && Double.parseDouble(pa) <= 101.0){
+            }else if(Double.parseDouble(pa) >= 94.0 && Double.parseDouble(pa) <= 101.99){
                 Constants.PT_4 = 1;
             }else{
                 Constants.PT_4 = 0;
@@ -164,33 +164,33 @@ public class Step2 extends BaseActivity implements TextWatcher, View.OnClickList
 
         }else if(Constants.GENDER.equals("F")) {
             //PCT
-            if(Double.parseDouble(pct) >= 11.0 && Double.parseDouble(pct) <= 13.0){
+            if(Double.parseDouble(pct) >= 11.0 && Double.parseDouble(pct) <= 13.99){
                 Constants.PT_2 = 1;
-            }else if(Double.parseDouble(pct) >= 14.0 && Double.parseDouble(pct) <= 15.0){
+            }else if(Double.parseDouble(pct) >= 14.0 && Double.parseDouble(pct) <= 15.99){
                 Constants.PT_2 = 2;
-            }else if(Double.parseDouble(pct) >= 16.0 && Double.parseDouble(pct) <= 25.0){
+            }else if(Double.parseDouble(pct) >= 16.0 && Double.parseDouble(pct) <= 24.99){
                 Constants.PT_2 = 3;
             }else{
                 Constants.PT_2 = 0;
             }
 
             //CB
-            if(Double.parseDouble(cb) >= 18.0 && Double.parseDouble(cb) <= 19.0) {
+            if(Double.parseDouble(cb) >= 18.0 && Double.parseDouble(cb) <= 19.99) {
                 Constants.PT_3 = 1;
-            }else if(Double.parseDouble(cb) >= 20.0 && Double.parseDouble(cb) <= 22.0){
+            }else if(Double.parseDouble(cb) >= 20.0 && Double.parseDouble(cb) <= 22.99){
                 Constants.PT_3 = 2;
-            }else if(Double.parseDouble(cb) >= 23.0 && Double.parseDouble(cb) <= 25.0){
+            }else if(Double.parseDouble(cb) >= 23.0){
                 Constants.PT_3 = 3;
             }else{
                 Constants.PT_3 = 0;
             }
 
             //PA
-            if(Double.parseDouble(pa) >= 1.0 && Double.parseDouble(pa) <= 80.0) {
+            if(Double.parseDouble(pa) >= 1.0 && Double.parseDouble(pa) <= 80.99) {
                 Constants.PT_4 = 3;
-            }else if(Double.parseDouble(pa) >= 81.0 && Double.parseDouble(pa) <= 83.0){
+            }else if(Double.parseDouble(pa) >= 81.0 && Double.parseDouble(pa) <= 83.99){
                 Constants.PT_4 = 2;
-            }else if(Double.parseDouble(pa) >= 84.0 && Double.parseDouble(pa) <= 87.0){
+            }else if(Double.parseDouble(pa) >= 84.0 && Double.parseDouble(pa) <= 87.99){
                 Constants.PT_4 = 1;
             }else{
                 Constants.PT_4 = 0;

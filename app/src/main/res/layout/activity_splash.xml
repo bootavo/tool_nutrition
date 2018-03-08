@@ -34,7 +34,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:gravity="center_horizontal"
-        android:text="Herramiento Digital de Evaluación del Riesgo Nutricional"
+        android:text="NutriGätjens"
         android:textColor="#FFF"
         android:textSize="24sp"
         android:textStyle="bold"
