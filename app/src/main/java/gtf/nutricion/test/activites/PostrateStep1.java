@@ -232,17 +232,15 @@ public class PostrateStep1 extends BaseActivity implements TextWatcher, View.OnC
 
             if(Constants.AGE >= 18 && Constants.AGE <= 59){
                 if(Constants.GENDER.equals("M")){
-                    size = (70.25f) + (0.05f * Constants.AGE) + (1.86f * _ar);
-                    size = size /100f;
+                    size = ((70.25f) + (0.05f * Constants.AGE) + (1.86f * _ar)) / 100.0f;
                 }else if (Constants.GENDER.equals("F")){
-                    size = (1.885f * _ar) + (71.85f);
-                    size = size /100f;
+                    size = ((1.885f * _ar) + (71.85f) ) / 100.0f;
                 }
             }else if(Constants.AGE >= 60){
                 if(Constants.GENDER.equals("M")){
-                    size = (64.19f) - (0.04f * Constants.AGE) + (2.02f * _ar);
+                    size = ((64.19f) - (0.04f * Constants.AGE) + (2.02f * _ar)) / 100.0f;
                 }else if (Constants.GENDER.equals("F")){
-                    size = (84.88f) - (0.24f * Constants.AGE) + (1.83f * _ar);
+                    size = ((84.88f) - (0.24f * Constants.AGE) + (1.83f * _ar)) / 100.0f;
                 }
             }
 
@@ -262,7 +260,7 @@ public class PostrateStep1 extends BaseActivity implements TextWatcher, View.OnC
         if(verifyWeight() && verifySize()) {
 
             float body_weight = Float.parseFloat(final_weight+"");
-            float size = Float.parseFloat(final_size+"")/100;
+            float size = Float.parseFloat(final_size+"");
             float imc = body_weight / (size * size);
 
             Log.d(TAG, "------------------>weight: "+body_weight);

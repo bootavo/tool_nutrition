@@ -119,6 +119,12 @@ public class Step2 extends BaseActivity implements TextWatcher, View.OnClickList
         float _cb = Float.parseFloat(getCb());
         float _pa = Float.parseFloat(getPa());
 
+        //GRABANDO NUEVOS SCORES
+        Constants.PLIEGUE_CUTANEO_TRICIPITAL = Double.parseDouble(getPct());
+        Constants.CIRCUNFERENCIA_MUSCULAR_BRAZO = Double.parseDouble(getCb());
+        Constants.CIRCUNFERENCIA_CINTURA = Double.parseDouble(getPa());
+
+
         String pct = String.format("%.2f", _pct);
         String cb = String.format("%.2f", _cb);
         String pa = String.format("%.2f", _pa);

@@ -119,6 +119,11 @@ public class Step3 extends BaseActivity implements TextWatcher, View.OnClickList
         float _albumina = Float.parseFloat(geAlbumina());
         float _linfacitary = Float.parseFloat(getLinfacitary());
 
+        //SAVES NEW SCORES
+        Constants.HEMOGOBLINA = Double.parseDouble(getHemoglobine());
+        Constants.ALBUMINA = Double.parseDouble(geAlbumina());
+        Constants.RECUENTO_TOTAL_LINFOCITARIO = Double.parseDouble(getLinfacitary());
+
         String hemogobline = String.format("%.2f", _hemoglobine);
         String albumina = String.format("%.2f", _albumina);
         String linfacitary = String.format("%.2f", _linfacitary);

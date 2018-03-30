@@ -114,7 +114,7 @@
             android:id="@+id/et_linfacitary"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:hint="recuento linfacitario"
+            android:hint="recuento linfocitario"
             android:digits="0123456789."
             android:inputType="phone"/>
 

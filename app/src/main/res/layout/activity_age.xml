@@ -103,7 +103,7 @@
                         android:id="@+id/tv_age_error"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Ingrese una edad válida\n[Mayor a 18 años]"
+                        android:text="Ingrese una edad válida\n[Mayor a 20 años]"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center_horizontal"
                         android:textSize="14sp"

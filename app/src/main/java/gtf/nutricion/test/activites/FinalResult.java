@@ -1,10 +1,8 @@
 package gtf.nutricion.test.activites;
 
+import android.content.Context;
 import android.graphics.Point;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.widget.Button;
@@ -16,7 +14,6 @@ import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import gtf.nutricion.test.R;
-import gtf.nutricion.test.other.Constants;
 
 /**
  * Created by bootavo on 1/27/18.
@@ -31,10 +28,13 @@ public class FinalResult extends BaseActivity implements View.OnClickListener{
     @BindView(R.id.v_tab) View mViewTab;
     @BindView(R.id.btn_next) Button btnNext;
 
-    @BindView(R.id.tv_value_results) TextView mValueResults;
+    @BindView(R.id.et_value_results) EditText mValueResults;
+    @BindView(R.id.et_email) EditText mEmail;
     @BindView(R.id.tv_action_plan) TextView mActionPlan;
+    @BindView(R.id.et_patient) EditText mPatient;
 
     private String TAG = FinalResult.class.getSimpleName();
+    private Context ctx = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +52,6 @@ public class FinalResult extends BaseActivity implements View.OnClickListener{
         btnNext.setOnClickListener(this);
         mBack.setOnClickListener(this);
         mTVNext.setOnClickListener(this);
-        showValueResults();
         showActionPlan();
         setViewStep();
     }
@@ -67,32 +66,68 @@ public class FinalResult extends BaseActivity implements View.OnClickListener{
         mViewTab.setLayoutParams(parms);
     }
 
-    public void showValueResults(){
-        String message = "";
-        if(Constants.PT_TOTAL >= 0.0 && Constants.PT_TOTAL <= 6.0){
-            message = "Riesgo Severo";
-        }else if(Constants.PT_TOTAL >= 7.0 && Constants.PT_TOTAL <= 13.0){
-            message = "Riesgo Moderado";
-        }else if(Constants.PT_TOTAL >= 14.0 && Constants.PT_TOTAL <= 17.0){
-            message = "Riesgo Leve";
-        }else if(Constants.PT_TOTAL >= 18.0 && Constants.PT_TOTAL <= 21.0){
-            message = "Normalidad";
-        }
-        mValueResults.setText(message);
-    }
-
     public void showActionPlan(){
         String message = "";
-        if(Constants.PT_TOTAL >= 0.0 && Constants.PT_TOTAL <= 17.0){
-            message = "El paciente presenta un riesgo nutricional, la terapía nutricional debe ser iniciada lo antes posible.";
-        }else if(Constants.PT_TOTAL >= 18.0 && Constants.PT_TOTAL <= 21.0){
-            message = "El paciente debe ser evaluado semanalmente. Si es que el paciente está próximo a una intervención quirurgica, se debe establecer una terapía nutricional de carácter preventivo.";
-        }
+        message = "Si es que el paciente está próximo a una intervención quirurgica, se debe establecer una terapía nutricional de carácter preventivo.";
         mActionPlan.setText(message);
     }
 
+    private String getPatient(){
+        return mPatient.getText().toString().trim();
+    }
+
+    private boolean verifyPatient(){
+        if(getPatient() == null || getPatient().equals("")){
+            return false;
+        }else {
+            return true;
+        }
+    }
+
+    private String getEmail(){
+        return mEmail.getText().toString().trim();
+    }
+
+    private boolean verifyEmail(){
+        if(getEmail() == null || getEmail().equals("")){
+            return false;
+        }else {
+            return true;
+        }
+    }
+
+    private String getDiagnostics(){
+        return mValueResults.getText().toString().trim();
+    }
+
+    private boolean verifyDiagnostics(){
+        if(getDiagnostics() == null || getDiagnostics().equals("")){
+            return false;
+        }else {
+            return true;
+        }
+    }
+
+    private void sendEmail(){
+        if(verifyEmail() && verifyDiagnostics() && verifyPatient()){
+
+            SendMail sm = new SendMail(ctx, getEmail(), "DIAGNÓSTICO NUTRICIONAL",
+                    "Nombre del paciente: "+getPatient()+"\nDiagnóstico: "+getDiagnostics());
+            sm.execute();
+            //next(GratitudeActivity.class, false);
+        }else{
+            if(getEmail().equals("")){
+                Toast.makeText(ctx, "Ingrese un email", Toast.LENGTH_SHORT).show();
+            }else if(getDiagnostics().equals("")){
+                Toast.makeText(ctx, "Ingrese su diagnóstico", Toast.LENGTH_SHORT).show();
+            }else if(getPatient().equals("")){
+                Toast.makeText(ctx, "Ingrese el nombre del paciente", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
     public void nextActivity(){
-        next(GratitudeActivity.class, false);
+        sendEmail();
     }
 
     @Override
