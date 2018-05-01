@@ -77,7 +77,7 @@ public class PreResult extends BaseActivity implements View.OnClickListener{
         //mImc.setText(imc+" Pts");
 
         if(Constants.IMC >= 0.0 && Constants.IMC <= 15.99){
-            mImc.setText("DELGADEZ SEVERA");
+            mImc.setText("DELGADEZ LEVE");
         }else if (Constants.IMC >= 16.00 && Constants.IMC <= 16.99){
             mImc.setText("DELGADEZ MODERADA");
         }else if (Constants.IMC >= 17.00 && Constants.IMC <= 18.49){
@@ -100,11 +100,11 @@ public class PreResult extends BaseActivity implements View.OnClickListener{
         if(Constants.GENDER.equals("M")){
 
             if(Constants.PLIEGUE_CUTANEO_TRICIPITAL >= 1.0 && Constants.PLIEGUE_CUTANEO_TRICIPITAL <= 7.59){
-                mPliegueCutaneo.setText("DESNUTRICIÓN SEVERA");
+                mPliegueCutaneo.setText("INMUNOSUPRESIÓN SEVERA");
             }else if(Constants.PLIEGUE_CUTANEO_TRICIPITAL >= 7.60 && Constants.PLIEGUE_CUTANEO_TRICIPITAL <= 8.89){
-                mPliegueCutaneo.setText("DESNUTRICIÓN MODERADA");
+                mPliegueCutaneo.setText("INMUNOSUPRESIÓN MODERADA");
             }else if(Constants.PLIEGUE_CUTANEO_TRICIPITAL >= 8.9 && Constants.PLIEGUE_CUTANEO_TRICIPITAL <= 10.99){
-                mPliegueCutaneo.setText("DESNUTRICIÓN LEVE");
+                mPliegueCutaneo.setText("INMUNOSUPRESIÓN LEVE");
             }else if(Constants.PLIEGUE_CUTANEO_TRICIPITAL >= 11.0 && Constants.PLIEGUE_CUTANEO_TRICIPITAL <= 19.99){
                 mPliegueCutaneo.setText("NORMALIDAD");
             }else if(Constants.PLIEGUE_CUTANEO_TRICIPITAL >= 20.0){
@@ -113,11 +113,11 @@ public class PreResult extends BaseActivity implements View.OnClickListener{
 
         }else if(Constants.GENDER.equals("F")){
             if(Constants.PLIEGUE_CUTANEO_TRICIPITAL >= 1.0 && Constants.PLIEGUE_CUTANEO_TRICIPITAL <= 9.99){
-                mPliegueCutaneo.setText("DESNUTRICIÓN SEVERA");
+                mPliegueCutaneo.setText("INMUNOSUPRESIÓN SEVERA");
             }else if(Constants.PLIEGUE_CUTANEO_TRICIPITAL >= 10.0 && Constants.PLIEGUE_CUTANEO_TRICIPITAL <= 11.59){
-                mPliegueCutaneo.setText("DESNUTRICIÓN MODERADA");
+                mPliegueCutaneo.setText("INMUNOSUPRESIÓN MODERADA");
             }else if(Constants.PLIEGUE_CUTANEO_TRICIPITAL >= 11.60 && Constants.PLIEGUE_CUTANEO_TRICIPITAL <= 13.99){
-                mPliegueCutaneo.setText("DESNUTRICIÓN LEVE");
+                mPliegueCutaneo.setText("INMUNOSUPRESIÓN LEVE");
             }else if(Constants.PLIEGUE_CUTANEO_TRICIPITAL >= 14.0 && Constants.PLIEGUE_CUTANEO_TRICIPITAL <= 24.99){
                 mPliegueCutaneo.setText("NORMALIDAD");
             }else if(Constants.PLIEGUE_CUTANEO_TRICIPITAL >= 25.0){
@@ -130,21 +130,21 @@ public class PreResult extends BaseActivity implements View.OnClickListener{
 
         if(Constants.GENDER.equals("M")){
             if(Constants.CIRCUNFERENCIA_MUSCULAR_BRAZO >= 1.0 && Constants.CIRCUNFERENCIA_MUSCULAR_BRAZO <= 15.29){
-                mCircunferenceHands.setText("DESNUTRICIÓN SEVERA");
+                mCircunferenceHands.setText("INMUNOSUPRESIÓN SEVERA");
             }else if(Constants.CIRCUNFERENCIA_MUSCULAR_BRAZO >= 15.30 && Constants.CIRCUNFERENCIA_MUSCULAR_BRAZO <= 17.79){
-                mCircunferenceHands.setText("DESNUTRICIÓN MODERADA");
+                mCircunferenceHands.setText("INMUNOSUPRESIÓN MODERADA");
             }else if (Constants.CIRCUNFERENCIA_MUSCULAR_BRAZO >= 17.80 && Constants.CIRCUNFERENCIA_MUSCULAR_BRAZO <= 20.29){
-                mCircunferenceHands.setText("DESNUTRICIÓN LEVE");
+                mCircunferenceHands.setText("INMUNOSUPRESIÓN LEVE");
             }else if(Constants.CIRCUNFERENCIA_MUSCULAR_BRAZO >= 20.30){
                 mCircunferenceHands.setText("NORMALIDAD");
             }
         }else if(Constants.GENDER.equals("F")){
             if(Constants.CIRCUNFERENCIA_MUSCULAR_BRAZO >= 1.0 && Constants.CIRCUNFERENCIA_MUSCULAR_BRAZO <= 13.99){
-                mCircunferenceHands.setText("DESNUTRICIÓN SEVERA");
+                mCircunferenceHands.setText("INMUNOSUPRESIÓN SEVERA");
             }else if(Constants.CIRCUNFERENCIA_MUSCULAR_BRAZO >= 14.00 && Constants.CIRCUNFERENCIA_MUSCULAR_BRAZO <= 16.29){
-                mCircunferenceHands.setText("DESNUTRICIÓN MODERADA");
+                mCircunferenceHands.setText("INMUNOSUPRESIÓN MODERADA");
             }else if (Constants.CIRCUNFERENCIA_MUSCULAR_BRAZO >= 16.30 && Constants.CIRCUNFERENCIA_MUSCULAR_BRAZO <= 18.69){
-                mCircunferenceHands.setText("DESNUTRICIÓN LEVE");
+                mCircunferenceHands.setText("INMUNOSUPRESIÓN LEVE");
             }else if(Constants.CIRCUNFERENCIA_MUSCULAR_BRAZO >= 18.70){
                 mCircunferenceHands.setText("NORMALIDAD");
             }
@@ -186,12 +186,14 @@ public class PreResult extends BaseActivity implements View.OnClickListener{
                 mHemoglogine.setText("NORMALIDAD");
             }
         }else if(Constants.GENDER.equals("F")){
-            if(Constants.HEMOGOBLINA >= 0.0 && Constants.HEMOGOBLINA <= 79.99){
+            if(Constants.HEMOGOBLINA >= 0.0 && Constants.HEMOGOBLINA <= 7.99){
                 mHemoglogine.setText("NORMALIDAD");
-            }else if(Constants.HEMOGOBLINA >= 80.0 && Constants.HEMOGOBLINA <= 87.99){
+            }else if(Constants.HEMOGOBLINA >= 8.00 && Constants.HEMOGOBLINA <= 9.99){
                 mHemoglogine.setText("RIESGO ELEVADO");
-            }else if (Constants.HEMOGOBLINA >= 88.0){
+            }else if (Constants.HEMOGOBLINA >= 10.0 && Constants.HEMOGOBLINA <= 11.99){
                 mHemoglogine.setText("RIESGO MUY ELEVADO");
+            }else if (Constants.HEMOGOBLINA >= 12.00 && Constants.HEMOGOBLINA <= 16.00){
+                mHemoglogine.setText("NORMALIDAD");
             }
         }
 
@@ -199,11 +201,11 @@ public class PreResult extends BaseActivity implements View.OnClickListener{
         //mAlbumina.setText(a+" Pts");
 
         if(Constants.ALBUMINA >= 0.0 && Constants.ALBUMINA <= 2.09){
-            mAlbumina.setText("DESNUTRICIÓN SEVERA");
+            mAlbumina.setText("INMUNOSUPRESIÓN SEVERA");
         }else if(Constants.ALBUMINA >= 2.10 && Constants.ALBUMINA <= 2.79){
-            mAlbumina.setText("DESNUTRICIÓN MODERADA");
+            mAlbumina.setText("INMUNOSUPRESIÓN MODERADA");
         }else if (Constants.ALBUMINA >= 2.80 && Constants.ALBUMINA <= 3.39){
-            mAlbumina.setText("DESNUTRICIÓN LEVE");
+            mAlbumina.setText("INMUNOSUPRESIÓN LEVE");
         }else if (Constants.ALBUMINA >= 3.40){
             mAlbumina.setText("NORMALIDAD");
         }
@@ -212,11 +214,11 @@ public class PreResult extends BaseActivity implements View.OnClickListener{
         //mLinfocitary.setText(l+" Pts");
 
         if(Constants.RECUENTO_TOTAL_LINFOCITARIO >= 0.0 && Constants.RECUENTO_TOTAL_LINFOCITARIO <= 799.0){
-            mLinfocitary.setText("DESNUTRICIÓN SEVERA");
+            mLinfocitary.setText("INMUNOSUPRESIÓN SEVERA");
         }else if(Constants.RECUENTO_TOTAL_LINFOCITARIO >= 800.0 && Constants.RECUENTO_TOTAL_LINFOCITARIO <= 1199.00){
-            mLinfocitary.setText("DESNUTRICIÓN MODERADA");
+            mLinfocitary.setText("INMUNOSUPRESIÓN MODERADA");
         }else if (Constants.RECUENTO_TOTAL_LINFOCITARIO >= 1200.0 && Constants.RECUENTO_TOTAL_LINFOCITARIO <= 1499.00){
-            mLinfocitary.setText("DESNUTRICIÓN LEVE");
+            mLinfocitary.setText("INMUNOSUPRESIÓN LEVE");
         }else if (Constants.RECUENTO_TOTAL_LINFOCITARIO >= 1500){
             mLinfocitary.setText("NORMALIDAD");
         }

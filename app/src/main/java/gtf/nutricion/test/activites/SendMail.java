@@ -1,7 +1,9 @@
 package gtf.nutricion.test.activites;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
@@ -31,14 +33,16 @@ public class SendMail extends AsyncTask<Void,Void,Void> {
     private String email;
     private String subject;
     private String message;
+    private Activity activity;
 
     //Progressdialog to show while sending email
     private ProgressDialog progressDialog;
 
     //Class Constructor
-    public SendMail(Context context, String email, String subject, String message){
+    public SendMail(Context context, Activity activity, String email, String subject, String message){
         //Initializing variables
         this.context = context;
+        this.activity = activity;
         this.email = email;
         this.subject = subject;
         this.message = message;
@@ -56,8 +60,14 @@ public class SendMail extends AsyncTask<Void,Void,Void> {
         super.onPostExecute(aVoid);
         //Dismissing the progress dialog
         progressDialog.dismiss();
+
         //Showing a success message
         Toast.makeText(context,"Mensaje enviado",Toast.LENGTH_LONG).show();
+
+        Intent intent = new Intent(context, GratitudeActivity.class);
+        activity.startActivity(intent);
+        activity.finish();
+
     }
 
     @Override

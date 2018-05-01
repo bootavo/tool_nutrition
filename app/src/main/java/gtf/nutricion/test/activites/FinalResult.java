@@ -1,5 +1,6 @@
 package gtf.nutricion.test.activites;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Point;
 import android.os.Bundle;
@@ -111,7 +112,7 @@ public class FinalResult extends BaseActivity implements View.OnClickListener{
     private void sendEmail(){
         if(verifyEmail() && verifyDiagnostics() && verifyPatient()){
 
-            SendMail sm = new SendMail(ctx, getEmail(), "DIAGNÓSTICO NUTRICIONAL",
+            SendMail sm = new SendMail(ctx, (Activity) ctx, getEmail(), "DIAGNÓSTICO NUTRICIONAL",
                     "Nombre del paciente: "+getPatient()+"\nDiagnóstico: "+getDiagnostics());
             sm.execute();
             //next(GratitudeActivity.class, false);
