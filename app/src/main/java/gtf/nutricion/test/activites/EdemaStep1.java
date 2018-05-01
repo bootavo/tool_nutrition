@@ -9,6 +9,7 @@ import android.view.Display;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
@@ -226,6 +227,28 @@ public class EdemaStep1 extends BaseActivity implements TextWatcher, View.OnClic
     }
 
     public void initSwitchesEdema(){
+
+        mSwitchEdema.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    mLLEL.setVisibility(View.VISIBLE);
+                    mLLEM.setVisibility(View.VISIBLE);
+                    mLLES.setVisibility(View.VISIBLE);
+                }else{
+                    mSwitchEdemaL.setChecked(false);
+                    mSwitchEdemaM.setChecked(false);
+                    mSwitchEdemaS.setChecked(false);
+                    mLLEL.setVisibility(View.GONE);
+                    mLLEM.setVisibility(View.GONE);
+                    mLLES.setVisibility(View.GONE);
+                    resta_edema = 0.0;
+                    setWeight();
+                }
+            }
+        });
+
+        /*
         mSwitchEdema.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -245,11 +268,12 @@ public class EdemaStep1 extends BaseActivity implements TextWatcher, View.OnClic
                 }
             }
         });
+        */
 
-        mSwitchEdemaL.setOnClickListener(new View.OnClickListener() {
+        mSwitchEdemaL.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
-                if(mSwitchEdemaL.isChecked()){
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
                     resta_edema = 1.0;
                     mSwitchEdemaM.setChecked(false);
                     mSwitchEdemaS.setChecked(false);
@@ -261,10 +285,10 @@ public class EdemaStep1 extends BaseActivity implements TextWatcher, View.OnClic
             }
         });
 
-        mSwitchEdemaM.setOnClickListener(new View.OnClickListener() {
+        mSwitchAscitisM.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
-                if(mSwitchEdemaM.isChecked()){
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
                     resta_edema = 5.0;
                     mSwitchEdemaL.setChecked(false);
                     mSwitchEdemaS.setChecked(false);
@@ -275,6 +299,7 @@ public class EdemaStep1 extends BaseActivity implements TextWatcher, View.OnClic
                 }
             }
         });
+
 
         mSwitchEdemaS.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -290,13 +315,15 @@ public class EdemaStep1 extends BaseActivity implements TextWatcher, View.OnClic
                 }
             }
         });
+
     }
 
     public void initSwitchesAscitis(){
-        mSwitchAscitis.setOnClickListener(new View.OnClickListener() {
+
+        mSwitchAscitis.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
-                if (mSwitchAscitis.isChecked()){
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
                     mLLAL.setVisibility(View.VISIBLE);
                     mLLAM.setVisibility(View.VISIBLE);
                     mLLAS.setVisibility(View.VISIBLE);
@@ -313,10 +340,10 @@ public class EdemaStep1 extends BaseActivity implements TextWatcher, View.OnClic
             }
         });
 
-        mSwitchAscitisL.setOnClickListener(new View.OnClickListener() {
+        mSwitchAscitisL.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
-                if(mSwitchAscitisL.isChecked()){
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
                     resta_ascitis = 2.2;
                     mSwitchAscitisM.setChecked(false);
                     mSwitchAscitisS.setChecked(false);
@@ -328,10 +355,10 @@ public class EdemaStep1 extends BaseActivity implements TextWatcher, View.OnClic
             }
         });
 
-        mSwitchAscitisM.setOnClickListener(new View.OnClickListener() {
+        mSwitchAscitisM.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
-                if(mSwitchAscitisM.isChecked()){
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
                     resta_ascitis = 6.0;
                     mSwitchAscitisL.setChecked(false);
                     mSwitchAscitisS.setChecked(false);
@@ -343,10 +370,10 @@ public class EdemaStep1 extends BaseActivity implements TextWatcher, View.OnClic
             }
         });
 
-        mSwitchAscitisS.setOnClickListener(new View.OnClickListener() {
+        mSwitchAscitisS.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
-                if(mSwitchAscitisS.isChecked()){
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
                     resta_ascitis = 14.0;
                     mSwitchAscitisL.setChecked(false);
                     mSwitchAscitisM.setChecked(false);
@@ -357,6 +384,7 @@ public class EdemaStep1 extends BaseActivity implements TextWatcher, View.OnClic
                 }
             }
         });
+
     }
 
 }
