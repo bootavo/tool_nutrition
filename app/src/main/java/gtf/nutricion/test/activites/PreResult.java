@@ -77,11 +77,11 @@ public class PreResult extends BaseActivity implements View.OnClickListener{
         //mImc.setText(imc+" Pts");
 
         if(Constants.IMC >= 0.0 && Constants.IMC <= 15.99){
-            mImc.setText("DELGADEZ LEVE");
+            mImc.setText("DELGADEZ SEVERA");
         }else if (Constants.IMC >= 16.00 && Constants.IMC <= 16.99){
             mImc.setText("DELGADEZ MODERADA");
         }else if (Constants.IMC >= 17.00 && Constants.IMC <= 18.49){
-            mImc.setText("DELGADEZ ACEPTABLE");
+            mImc.setText("DELGADEZ LEVE");
         }else if (Constants.IMC >= 18.50 && Constants.IMC <= 24.99){
             mImc.setText("NORMALIDAD");
         }else if (Constants.IMC >= 25.00 && Constants.IMC <= 29.99){
@@ -187,12 +187,12 @@ public class PreResult extends BaseActivity implements View.OnClickListener{
             }
         }else if(Constants.GENDER.equals("F")){
             if(Constants.HEMOGOBLINA >= 0.0 && Constants.HEMOGOBLINA <= 7.99){
-                mHemoglogine.setText("NORMALIDAD");
+                mHemoglogine.setText("ANEMÍA GRAVE");
             }else if(Constants.HEMOGOBLINA >= 8.00 && Constants.HEMOGOBLINA <= 9.99){
-                mHemoglogine.setText("RIESGO ELEVADO");
+                mHemoglogine.setText("ANEMÍA MODERADA");
             }else if (Constants.HEMOGOBLINA >= 10.0 && Constants.HEMOGOBLINA <= 11.99){
-                mHemoglogine.setText("RIESGO MUY ELEVADO");
-            }else if (Constants.HEMOGOBLINA >= 12.00 && Constants.HEMOGOBLINA <= 16.00){
+                mHemoglogine.setText("ANEMÍA LEVE");
+            }else if (Constants.HEMOGOBLINA >= 12.00){
                 mHemoglogine.setText("NORMALIDAD");
             }
         }
@@ -201,11 +201,11 @@ public class PreResult extends BaseActivity implements View.OnClickListener{
         //mAlbumina.setText(a+" Pts");
 
         if(Constants.ALBUMINA >= 0.0 && Constants.ALBUMINA <= 2.09){
-            mAlbumina.setText("INMUNOSUPRESIÓN SEVERA");
+            mAlbumina.setText("DESNUTRICIÓN SEVERA");
         }else if(Constants.ALBUMINA >= 2.10 && Constants.ALBUMINA <= 2.79){
-            mAlbumina.setText("INMUNOSUPRESIÓN MODERADA");
+            mAlbumina.setText("DESNUTRICIÓN MODERADA");
         }else if (Constants.ALBUMINA >= 2.80 && Constants.ALBUMINA <= 3.39){
-            mAlbumina.setText("INMUNOSUPRESIÓN LEVE");
+            mAlbumina.setText("DESNUTRICIÓN LEVE");
         }else if (Constants.ALBUMINA >= 3.40){
             mAlbumina.setText("NORMALIDAD");
         }
