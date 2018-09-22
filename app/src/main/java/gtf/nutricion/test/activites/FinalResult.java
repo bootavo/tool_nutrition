@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Point;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.widget.Button;
@@ -12,9 +13,17 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+
+import butterknife.BindDimen;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import gtf.nutricion.test.R;
+import gtf.nutricion.test.other.Constants;
 
 /**
  * Created by bootavo on 1/27/18.
@@ -34,8 +43,19 @@ public class FinalResult extends BaseActivity implements View.OnClickListener{
     @BindView(R.id.tv_action_plan) TextView mActionPlan;
     @BindView(R.id.et_patient) EditText mPatient;
 
+    @BindView(R.id.tv_age) TextView mAge;
+    @BindView(R.id.tv_date) TextView mDate;
+    @BindView(R.id.et_start_date) EditText mStartDate;
+    @BindView(R.id.et_history_number) EditText mHistoryNumber;
+    @BindView(R.id.et_bed_number) EditText mBedNumber;
+
+    @BindView(R.id.et_place_incoming) EditText mPlaceProcedence;
+    @BindView(R.id.et_place_coming) EditText mPlaceResidence;
+
     private String TAG = FinalResult.class.getSimpleName();
     private Context ctx = this;
+
+    private String date = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +85,12 @@ public class FinalResult extends BaseActivity implements View.OnClickListener{
         int height = size.y;
         FrameLayout.LayoutParams parms = new FrameLayout.LayoutParams(width*8,6);
         mViewTab.setLayoutParams(parms);
+
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        date = df.format(Calendar.getInstance().getTime());
+        mDate.setText(date);
+        mAge.setText(""+ Constants.AGE+" años");
+
     }
 
     public void showActionPlan(){
@@ -112,8 +138,26 @@ public class FinalResult extends BaseActivity implements View.OnClickListener{
     private void sendEmail(){
         if(verifyEmail() && verifyDiagnostics() && verifyPatient()){
 
-            SendMail sm = new SendMail(ctx, (Activity) ctx, getEmail(), "DIAGNÓSTICO NUTRICIONAL",
-                    "Nombre del paciente: "+getPatient()+"\nDiagnóstico: "+getDiagnostics());
+            Log.d(TAG, "Nombres "+getPatient());
+            Log.d(TAG, "Edad "+mAge.getText().toString() + " - "+ Constants.AGE);
+            Log.d(TAG, "Historia: "+mHistoryNumber.getText().toString());
+            Log.d(TAG, "Procedencia "+mPlaceProcedence.getText().toString());
+            Log.d(TAG, "Residencia "+mPlaceResidence.getText().toString());
+            Log.d(TAG, "Nro cama: "+mBedNumber.getText().toString());
+
+
+            String message = "";
+            message = "Información del Paciente: "+ System.getProperty ("line.separator")+System.getProperty ("line.separator")+
+                    "Nombres: "+getPatient()+System.getProperty ("line.separator")+
+                    "Edad: "+ mAge.getText().toString()+ System.getProperty ("line.separator")+System.getProperty ("line.separator")+
+                    "Número de Historia Clínica: "+mHistoryNumber.getText().toString()+System.getProperty ("line.separator")+
+                    "Número de Cama: "+mBedNumber.getText().toString()+System.getProperty ("line.separator")+
+                    "Diagnóstico: "+getDiagnostics()+System.getProperty ("line.separator")+
+                    "Lugar de Procedencia: "+mPlaceProcedence.getText().toString()+System.getProperty ("line.separator")+
+                    "Lugar de Residencia: "+mPlaceResidence.getText().toString()+ System.getProperty ("line.separator")+System.getProperty ("line.separator")+
+                    "Gracias por usar la aplicación NutriGätjens.";
+
+            SendMail sm = new SendMail(ctx, (Activity) ctx, getEmail(), "DIAGNÓSTICO NUTRICIONAL - "+mDate.getText().toString(), message);
             sm.execute();
             //next(GratitudeActivity.class, false);
         }else{

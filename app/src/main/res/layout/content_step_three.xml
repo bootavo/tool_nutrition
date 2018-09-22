@@ -39,7 +39,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="(mg/dL)"
+            android:text="(mg/dl)"
             android:gravity="center_vertical"
             android:layout_gravity="right"
             />
@@ -80,7 +80,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="(g/100 mL)"
+            android:text="(g/dl)"
             android:gravity="center_vertical"
             android:layout_gravity="right"
             />

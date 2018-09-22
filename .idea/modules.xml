@@ -3,8 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://D:\Android Studio Projects 2017\tool_nutrition\app\app.iml" filepath="D:\Android Studio Projects 2017\tool_nutrition\app\app.iml" />
-      <module fileurl="file://D:\Android Studio Projects 2017\tool_nutrition\test.iml" filepath="D:\Android Studio Projects 2017\tool_nutrition\test.iml" />
       <module fileurl="file://$PROJECT_DIR$/tool_nutrition.iml" filepath="$PROJECT_DIR$/tool_nutrition.iml" />
     </modules>
   </component>

@@ -116,7 +116,7 @@
             android:layout_height="match_parent"
             android:textSize="16dp"
             android:textColor="@color/white"
-            android:text="NOMBRE DEL PACIENTE:"
+            android:text="DATOS DEL PACIENTE:"
             android:textStyle="bold"
             android:gravity="center_vertical"
             android:paddingLeft="20dp"/>
@@ -137,6 +137,102 @@
             android:textSize="@dimen/subtitle"
             android:textColor="@color/primary_text"
             android:inputType="textEmailAddress"/>
+
+        <TextView
+            android:id="@+id/tv_age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="21 anios"
+            android:textSize="@dimen/subtitle"
+            android:textColor="@color/primary_text"
+            android:inputType="textEmailAddress"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/primary_text">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="16dp"
+            android:textColor="@color/white"
+            android:text="DATOS DE HISTORIA"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/subtitle"
+            android:text="Fecha"
+            android:textColor="@color/primary_text"
+            android:textAlignment="center"
+            android:inputType="textEmailAddress"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+
+        <EditText
+            android:id="@+id/et_history_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese el número de historia clínica"
+            android:textSize="@dimen/subtitle"
+            android:textColor="@color/primary_text"
+            android:inputType="textEmailAddress"/>
+
+        <EditText
+            android:id="@+id/et_start_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese la fecha de ingreso"
+            android:textSize="@dimen/subtitle"
+            android:textColor="@color/primary_text"
+            android:inputType="date"/>
+
+        <EditText
+            android:id="@+id/et_bed_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese el número de cama"
+            android:textSize="@dimen/subtitle"
+            android:textColor="@color/primary_text"
+            android:inputType="numberSigned"
+            android:layout_marginBottom="10dp"/>
+
+        <EditText
+            android:id="@+id/et_place_incoming"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Lugar de procedencia"
+            android:textSize="@dimen/subtitle"
+            android:textColor="@color/primary_text"
+            android:inputType="text"
+            android:layout_marginBottom="10dp"/>
+
+        <EditText
+            android:id="@+id/et_place_coming"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Lugar de residencia"
+            android:textSize="@dimen/subtitle"
+            android:textColor="@color/primary_text"
+            android:inputType="text"
+            android:layout_marginBottom="10dp"/>
 
     </LinearLayout>
 
