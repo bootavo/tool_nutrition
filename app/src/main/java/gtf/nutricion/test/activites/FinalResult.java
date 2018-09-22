@@ -148,7 +148,7 @@ public class FinalResult extends BaseActivity implements View.OnClickListener{
 
             String message = "";
             message = "Información del Paciente: "+ System.getProperty ("line.separator")+System.getProperty ("line.separator")+
-                    "Nombres: "+getPatient()+System.getProperty ("line.separator")+
+                    "Nombre: "+getPatient()+System.getProperty ("line.separator")+
                     "Edad: "+ mAge.getText().toString()+ System.getProperty ("line.separator")+System.getProperty ("line.separator")+
                     "Número de Historia Clínica: "+mHistoryNumber.getText().toString()+System.getProperty ("line.separator")+
                     "Número de Cama: "+mBedNumber.getText().toString()+System.getProperty ("line.separator")+
