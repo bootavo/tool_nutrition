@@ -267,7 +267,7 @@ public class EdemaStep1 extends BaseActivity implements TextWatcher, View.OnClic
                     setWeight();
                 }
             }
-        });
+        });b
         */
 
         mSwitchEdemaL.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

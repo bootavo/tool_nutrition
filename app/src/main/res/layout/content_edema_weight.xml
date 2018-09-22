@@ -21,12 +21,12 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textSize="16dp"
-                android:textColor="@color/white"
-                android:text="1. ÍNDICE DE MASA CORPORAL"
-                android:textStyle="bold"
                 android:gravity="center_vertical"
-                android:paddingLeft="20dp"/>
+                android:paddingLeft="20dp"
+                android:text="1. ÍNDICE DE MASA CORPORAL"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
