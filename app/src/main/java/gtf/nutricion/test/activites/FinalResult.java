@@ -23,7 +23,9 @@ import butterknife.BindDimen;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import gtf.nutricion.test.R;
+import gtf.nutricion.test.listeners.OnDialogResult;
 import gtf.nutricion.test.other.Constants;
+import gtf.nutricion.test.utils.DateDialogUtils;
 
 /**
  * Created by bootavo on 1/27/18.
@@ -73,6 +75,7 @@ public class FinalResult extends BaseActivity implements View.OnClickListener{
         btnNext.setOnClickListener(this);
         mBack.setOnClickListener(this);
         mTVNext.setOnClickListener(this);
+        mStartDate.setOnClickListener(this);
         showActionPlan();
         setViewStep();
     }
@@ -171,6 +174,21 @@ public class FinalResult extends BaseActivity implements View.OnClickListener{
         }
     }
 
+    public void showDialog(){
+        DateDialogUtils.showDialog(this, this, true, new OnDialogResult() {
+            @Override
+            public void onOk(String year, String month, String day) {
+                Log.d("gus", "id_year: "+year+", id_month: "+month+", day: "+day);
+                mStartDate.setText(year+"-"+month+"-"+day);
+            }
+
+            @Override
+            public void onCancel() {
+
+            }
+        });
+    }
+
     public void nextActivity(){
         sendEmail();
     }
@@ -186,6 +204,9 @@ public class FinalResult extends BaseActivity implements View.OnClickListener{
                 break;
             case R.id.tv_next:
                 nextActivity();
+                break;
+            case R.id.et_start_date:
+                showDialog();
                 break;
         }
     }

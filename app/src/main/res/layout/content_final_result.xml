@@ -31,7 +31,7 @@
         <EditText
             android:id="@+id/et_value_results"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="100dp"
             android:hint="Ingrese aquí su interpretación"
             android:textSize="@dimen/subtitle"
             android:textColor="@color/primary_text"
@@ -202,7 +202,10 @@
             android:hint="Ingrese la fecha de ingreso"
             android:textSize="@dimen/subtitle"
             android:textColor="@color/primary_text"
-            android:inputType="date"/>
+            android:inputType="date"
+            android:focusable="false"
+            android:clickable="true"
+            />
 
         <EditText
             android:id="@+id/et_bed_number"

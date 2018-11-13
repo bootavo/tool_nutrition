@@ -7,6 +7,6 @@ package gtf.nutricion.test.utils;
 public class Email {
 
     public static String EMAIL = "nutrigatjens@gmail.com";
-    public static String PASSWORD = "apptesis";
+    public static String PASSWORD = "nicholaslicen";
 
 }
